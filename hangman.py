@@ -106,7 +106,6 @@ def print_blanks(word_, correct_letters_):
             print ("_ ", end="")
     return solved
 
-
 print (blanks)
 
 guess = raw_input("Guess a letter: ")
