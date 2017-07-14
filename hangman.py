@@ -98,8 +98,8 @@ elif word == word_list[3]:
 
 def print_blanks(word_, correct_letters_):
     solved = True
-    for letter in correct_letters_:
-        if letter in word_:
+    for letter in word_:
+        if letter in correct_letters_:
             print (letter + " ", end="")
         else:
             solved = False
@@ -112,11 +112,11 @@ guess = raw_input("Guess a letter: ")
 guess = guess[0]
 count = 0
 
+
 while guess != "":
     if guess in word:
         print (guess + " is in the word.")
         correct_letters.append(guess)
-        print(hook())
         print_blanks(word, correct_letters)
         guess = raw_input("Guess a letter: ")
         guess = guess[0]
