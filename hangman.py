@@ -75,14 +75,16 @@ print (hook())
 
 
 word_list = ["hello", "python", "hangman", "happy"]
-blanks_list = [["__ __ __ __ __"], ["__ __ __ __ __ __"], ["__ __ __ __ __ __ __"], ["__ __ __ __ __"]]
+blanks_list = [["_ _ _ _ _"], ["_ _ _ _ _ _"], ["_ _ _ _ _ _ _"], ["_ _ _ _ _"]]
 word = numpy.random.choice(word_list)
 blanks = ""
+correct_letters = [""]
 
 # test
 # list = ["a, b, c, d"]
 # print (list[0][0:3])
 # test
+
 
 if word == word_list[0]:
     blanks = blanks_list[0][0]
@@ -93,11 +95,22 @@ elif word == word_list[2]:
 elif word == word_list[3]:
     blanks = blanks_list[3][0]
 
+
+def print_blanks(word_, correct_letters_):
+    solved = True
+    for letter in correct_letters_:
+        if letter in word_:
+            print (letter + " ", end="")
+        else:
+            solved = False
+            print ("_ ", end="")
+    return solved
+
+
 print (blanks)
 
 guess = raw_input("Guess a letter: ")
 guess = guess[0]
-correct_letters = [""]
 count = 0
 
 while guess != "":
@@ -105,7 +118,7 @@ while guess != "":
         print (guess + " is in the word.")
         correct_letters.append(guess)
         print(hook())
-        print (blanks)
+        print_blanks(word, correct_letters)
         guess = raw_input("Guess a letter: ")
         guess = guess[0]
     else:
@@ -113,27 +126,27 @@ while guess != "":
         count += 1
         if count == 1:
             print (head())
-            print (blanks)
+            print (print_blanks(word, correct_letters))
             guess = raw_input("Guess a letter: ")
             guess = guess[0]
         elif count == 2:
             print (body())
-            print (blanks)
+            print (print_blanks(word, correct_letters))
             guess = raw_input("Guess a letter: ")
             guess = guess[0]
         elif count == 3:
             print (left_arm())
-            print (blanks)
+            print (print_blanks(word, correct_letters))
             guess = raw_input("Guess a letter: ")
             guess = guess[0]
         elif count == 4:
             print (right_arm())
-            print (blanks)
+            print (print_blanks(word, correct_letters))
             guess = raw_input("Guess a letter: ")
             guess = guess[0]
         elif count == 5:
             print (left_leg())
-            print (blanks)
+            print (print_blanks(word, correct_letters))
             guess = raw_input("Guess a letter: ")
             guess = guess[0]
         elif count == 6:
@@ -141,6 +154,6 @@ while guess != "":
             correct_letters = [""]
             blanks = ""
             print (right_leg())
-            print (blanks)
+            print (print_blanks(word, correct_letters))
             print ("You lost!")
             print ("The word was " + word.upper())
