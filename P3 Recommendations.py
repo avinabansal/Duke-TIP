@@ -65,16 +65,18 @@ def processLikes(iLike):
 # Load Data
 # Load the movie names data (u.item) with just columns 0 and 1 (id and name)
 # id is np.int, name is S128
-movieNames = 0 # TODO replace 0 with the correct cod eto load the movie data
+movieNames = numpy.loadtxt('./ml-100k/u.item', dtype={'names': ('id', 'name'),
+                                                      'formats': (np.int, 'S128')}, delimiter='|', usecols=(0,1)) # TODO replace 0 with the correct cod eto load the movie data
 
 # Create a dictionary with the ids as keys and the names as the values
 # Google search for "python merge lists into dictionary"
 # Second Result: https://stackoverflow.com/a/26269307/3854385
-movieDict = 0 # TODO replace 0 with the code to make the dict
+movieDict = dict(zip(movieNames['id'], movieNames['name'])) # TODO replace 0 with the code to make the dict
 
 
 # Load the movie Data (u.data) with just columns 0, 1, and 2 (userID, movieID, rating) all are np.int
-movieData = 0 # TODO replace 0 with the correct cod eto load the movie data
+movieData = numpy.loadtxt('./ml-100k/u.data', dtype={'names': ('userID', 'movieID', 'rating'), # TODO replace 0 with the correct cod eto load the movie data
+                                                     'formats': (np.int, np.int, np.int)}, delimiter = '\t' usecols=(0, 1, 2))
 
 print(movieData)
 print(movieNames)
@@ -90,10 +92,11 @@ exit(0) # Delete this after we finish phase 1, for now just get the data loaded
 # This is non-ideal, pandas, scipy, or graphlib should be used here
 
 # Create a dictionary to hold our temporary ratings
-movieRatingTemp = 0 # TODO replace 0 with code for an empty dictionary
+movieRatingTemp = {} # TODO replace 0 with code for an empty dictionary
 
 # TODO For every row in the movie data, add the rating to a list in the dictionary entry
 # for that movies ID (don't forget to initialize the dictionary entry)
+for row in movieData:
 
 
 # Create an empty dictionary for movieRating and movieRatingCount
