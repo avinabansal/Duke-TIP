@@ -125,6 +125,7 @@ print ("")
 
 # Top 10 Movies
 print("Top Ten Movies:")
+print ("")
 # TODO Print the top 10 movies
 # It should print the number, title, id, rating and count of reviews for each movie
 # ie 2. Someone Else's America (1995) (ID: 1599) Rating: 5.0 Count: 1
@@ -134,6 +135,7 @@ for i in range(11):
 
 # Top 10 Movies with at least 100 ratings
 print("\n\nTop Ten movies with at least 100 ratings:")
+print("")
 # TODO It should print the same thing, but this time all the movies should have over 100 ratings
 # The number should be the movie's absolute rank
 # ie (16. Close Shave, A (1995) (ID: 408) Rating: 4.49 Count: 112)
@@ -153,7 +155,7 @@ while moviesPrinted != 10:
 # (str(i) + ". " + str(movieNames[movieRatingS[i][0]][1]) + "(ID: " + str(movieRatingS[i][0]) + ") " + "Rating: " + \
 #           str(movieRating[movieRatingS[i][0]]) + " Count: " + str(movieRatingCount[movieRatingS[i][0]]))
 
-exit(0) # Remove this line after we finish phase 2
+# Remove this line after we finish phase 2
 
 ########################################################
 # Begin Phase 3
