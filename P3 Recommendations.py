@@ -16,6 +16,7 @@ def findSimilar(iLikeNp, userLikes):
     similarityOrSum = np.sum(userSimilarityOr(axis = 1)) - similarityAndSum # TODO replace 0 with the correct code
     
     # Calculate the similarity
+
     userSimilarity = similarityAndSum / similarityOrSum # TODO replace 0 with the correct code to calculate the Jaccard Index for each user
     
     # Make the most similar user has a new like that the previous user did not have
@@ -24,16 +25,22 @@ def findSimilar(iLikeNp, userLikes):
     # by setting the userSimilarity for them to 0
     # When you get the index, save it in the variable maxIndex
     # TODO Write the loop
-    
-    # TODO Print the max similarity number (most times this is something like 0.17
-    
+
+    maxIndex = userSimilarity.argmax()
+
+
+
+    # TODO Print the max similarity number (most times this is something like 0.17)
+    print (userSimilarity[maxIndex])
+
     # Return the index of the user which is the best match
     return maxIndex
-    
+
 def printMovie(id):
     # Print the id of the movie and the name.  This should look something like
     # "    - 430: Duck Soup (1933)" if the id is 430 and the name is Duck Soup (1933)
-    print(0) # TODO replace 0 with the correct code
+    print("  - " + id + ": " + movieNames['movieID'][id][1]) # TODO replace 0 with the correct code
+
 
 def processLikes(iLike):
     print("\n\nSince you like:")
@@ -208,8 +215,6 @@ print ("")
 #for id in iLike:
 #    iLikeNP[id] = 1
 
-#andSum = iLikeNP * userLikes
-#print (andSum.sum(axis = 1))
 # Create an array of 0s which will fill in with 1s when a user likes a movie
 userLikes = np.zeros((maxUser, maxMovie))
 print (userLikes)
