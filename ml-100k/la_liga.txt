@@ -1,0 +1,20 @@
+1|Alaves|14|11|9|41|4|
+2|Athletic Bilbao|19|13|7|53|4.5|
+3|Atletico Madrid|23|6|3|70|5|
+4|Celta Vigo|13|19|13|53|4.5|
+5|Deprotivo|8|18|16|43|4|
+6|Espanyol|15|12|8|49|4|
+7|Eibar|15|14|10|56|4|
+8|Barcelona|28|4|2|116|5|
+9|Sproting Gijon|7|21|18|42|3.5|
+10|Granada|4|26|20|30|3.5|
+11|Las Palmas|10|19|14|53|4|
+12|Leganes|8|19|17|36|4|
+13|Osasuna|4|24|19|40|3.5|
+14|Malaga|12|16|11|49|4|
+15|Real Betis|10|19|15|41|4|
+16|Real Madrid|29|3|1|106|5|
+17|Real Sociedad|19|12|6|59|4|
+18|Sevilla|21|8|4|69|4.5|
+19|Valencia|13|18|12|56|4|
+20|Villarreal|19|9|5|56|4.5|
