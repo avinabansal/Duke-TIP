@@ -1,0 +1,20 @@
+1|Chelsea|30|5|1|85|5
+2|Tottenham Hotspur|26|4|2|86|4.5
+3|Arsenal|23|9|5|77|5
+4|Manchester City|23|6|3|80|5
+5|Liverpool|22|6|4|78|4.5
+6|Manchester United|18|5|6|54|5
+7|Everton|17|11|7|62|4.5
+8|AFC Bournemouth|12|16|9|55|3.5
+9|Crystal Palace|12|21|14|50|4
+10|Leicester City|12|18|12|48|4
+11|Southampton|12|16|8|41|4
+12|Swansea City|12|21|15|45|4
+13|West Bromwich Albion|12|17|10|43|4
+14|West Ham United|12|17|11|47|4
+15|Burnley|11|20|16|39|3.5
+16|Stoke City|11|16|13|41|4
+17|Watford|11|20|17|40|4
+18|Hull City|9|22|18|37|4
+19|Sunderland|6|26|20|29|4
+20|Middlesbrough|5|20|19|27|4
