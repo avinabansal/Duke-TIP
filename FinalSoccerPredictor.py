@@ -23,6 +23,12 @@ SeriesAData = np.loadtxt('./SeriesASoccerData.txt', delimiter="|", dtype={"names
 SeriesAScores = np.loadtxt('./SeriesASoccerScores.txt', delimiter="\t",
                          dtype={"names":  ["team one", "one score", "two score", "team two"],
                       "formats": ["S128", np.int, np.int, "S128"]})
+MLSData = np.loadtxt('./MlsData.txt', delimiter="|",
+                         dtype={"names":  ["identifier", "name", "wins", "losses", "ranking", "goals", "rating"],
+                      "formats": [np.int, "S128", np.int, np.int, np.int, np.int, np.float]})
+MLSScores =  np.loadtxt('./MlsScores.txt', delimiter="\t",
+                         dtype={"names":  ["team one", "one score", "two score", "team two"],
+                      "formats": ["S128", np.int, np.int, "S128"]})
 
 print "Welcome to Soccer Predictor"
 
@@ -98,7 +104,7 @@ def Predictor(a, b, c, d):
 League = raw_input("Enter a league to start: ")
 
 # Checks if the league is valid
-league_list = ["Premier League", "La Liga", "Series A"]
+league_list = ["Premier League", "La Liga", "Series A", "MLS"]
 while League not in league_list:
     print "Invalid league"
     League = raw_input("Enter a league to start: ")
@@ -113,7 +119,11 @@ if League == "La Liga":
 if League == "Series A":
     c = SeriesAData
     d = SeriesAScores
+if League == "MLS":
+    c = MLSData
+    d = MLSScores
 
+# Calls the functions in order to find the winning team in the right league
 # Asks user to enter first team name
 a = raw_input("Enter the name of the first team from the league: ")
 # Checks if team name in database
@@ -128,6 +138,5 @@ while b not in c['name']:
     print "Invalid team"
     b = raw_input("Enter the name of the first team from the league: ")
 
-# Calls the functions in order to find the winning team in the right league
 Predictor(a, b, c, d)
 
